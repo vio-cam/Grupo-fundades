@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  /*navbar */
+  header.navegador {
+    background-color: #04444c;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo-infodis{
+    background-color: white;
+    position: relative;
+    height: 60px;
+    width: auto;
+  }
+  
+  .nav-bar nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-bar nav ul li {
+    position: relative;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  .nav-bar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-bar nav ul li:hover {
+    background-color: #03656a;
+  }
+  
+  .nav-bar nav ul li > a {
+    font-weight: bold;
+  }
+  
+  /* Submenú */
+  .nav-bar nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #03656a;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5px;
+    min-width: 150px;
+  }
+  
+  .nav-bar nav ul li:hover > ul {
+    display: block;
+  }
+  
+  .nav-bar nav ul li ul li {
+    padding: 10px;
+  }
+  
+  .nav-bar nav ul li ul li a {
+    color: #fff;
+  }
+  
+  .nav-bar nav ul li ul li a:hover {
+    background-color: #02504b;
+  }
+  
+  /* Estilos del contenedor */
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  /*carrusel*/
+.carrusel {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+  
+  /* elementos del carrusel*/
+  .slides {
+    display: flex;
+    animation: deslizar 60s infinite;
+  }
+  
+  .slide {
+    min-width: 100%;
+    padding: 20px;
+    text-align: rig;
+    background-color: #04444c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slide h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .slide p {
+    font-size: 16px;
+    line-height: 1.5;
+    padding-left: 50px;
+    padding-right: 150px;
+    max-width: 600px;
+  }
+
+  /*fondo para cada uno :carrusel*/
+    #inicio-infodis {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), 
+                      url(https://infodisperu.com/images/slider_1.jpg?a4c3a74c79c4ed5aa3593ad24aa70fb9);
+  }
+  
+  #instituciones {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), 
+                      url(https://infodisperu.com/images/banner_1.jpg?8afd129437a5f4d5115a5b5d2777467b);
+  }
+  
+  #servicios {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), 
+                      url(https://infodisperu.com/images/banner_3.jpg?f83cfa6bdb6ed37bec64e4f69f314165);
+  }
+  
+
+  /* Animación para deslizar los contenedores*/
+  @keyframes deslizar {
+    0% {
+      transform: translateX(0);
+    }
+    33.33% {
+      transform: translateX(-100%);
+    }
+    66.66% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
