@@ -38,25 +38,116 @@
   </header>
 
   <main>
-      <div class="carrusel">
+      <div class="carrusel-banner">
         <div class="slides">
           <div class="slide" id="inicio-infodis">
-              <h2>INFODIS</h2>
+              <h2 class="tittle-banner">INFODIS</h2>
               <p>"Abriendo puertas, creando oportunidades: educación gratuita para un futuro sin barreras."</p> 
+              <button class="btn-carrusel">Sobre nosotros</button>
           </div>
 
           <div class="slide" id="instituciones">
-            <h2>Instituciones</h2>
+            <h2 class="tittle-banner">Instituciones</h2>
             <p>Descubre una red de instituciones que apoyan a las personas con discapacidad en áreas como salud, educación y más.</p>
+            <button class="btn-carrusel">Recursos</button>
           </div>
           <div class="slide" id="servicios">
-            <h2>SERVICIOS PCD</h2>
+            <h2 class="tittle-banner">SERVICIOS PCD</h2>
             <p>"Infodis Perú facilita el acceso a servicios, capacitaciones y recursos para personas con discapacidad.
             ¡Explora nuestra plataforma y encuentra información actualizada sobre accesibilidad y oportunidades!"</p>
+            <button class="btn-carrusel">Servicios</button>
+          </div>
+          <div class="slide" id="servicios">
+            <h2 class="tittle-banner">Noticias</h2>
+            <p>"Encuentra noticias sobre discapacidad e inclusión, y descubre oportunidades laborales en empresas inclusivas. 💼🤝"</p>
+            <button class="btn-carrusel">Noticias</button>
           </div>
         </div>
       </div>
+
+      <div>
+        <img src="https://infodisperu.com/images/logo.png?dbb595780e34a8126e96a0bd58fa941d" alt="100px" class="logo-infodis-bvd">
+        <h2 class="tittle-bvd"><strong>Hola, somos INFODIS.</strong></h2>
+        <p class="txt-bvd"> "Conectamos a personas con discapacidad con empresas inclusivas, brindando servicios y capacitaciones para convertir sus sueños de inclusión laboral en una realidad."</p>
+      </div>
+
+      <div class="container-obj">
+        <h2><strong>NUESTROS</strong> <span style="color:#03656a; font-weight:bold;">PROPÓSITOS</span></h2>
+        <div class="objective">
+            <div class="number">1</div>
+            <div class="text">Brindar información a las Personas con Discapacidad (PCD).</div>
+        </div>
+        <div class="objective">
+            <div class="number">2</div>
+            <div class="text">Facilitar capacitaciones.</div>
+        </div>
+        <div class="objective">
+            <div class="number">3</div>
+            <div class="text">Conectar a las PCD con empresas inclusivas.</div>
+        </div>
+        <div class="objective">
+            <div class="number">4</div>
+            <div class="text">Fomentar la accesibilidad en todos los ámbitos de la sociedad.</div>
+        </div>
+        <div class="objective">
+            <div class="number">5</div>
+            <div class="text">Promover la inclusión laboral de las PCD.</div>
+        </div>
+        <div class="objective">
+            <div class="number">6</div>
+            <div class="text">Fomentar la accesibilidad universal.</div>
+        </div>
+    </div>
+
+    <div class="container-clh">
+      <h2>¿Cómo lo haremos?</h2>
+      <div class="grid">
+          <div class="card">
+              <h3>Capacitaciones y cursos</h3>
+              <p>Ofrecemos una variedad de cursos y talleres diseñados para mejorar las habilidades de las personas con discapacidad, específicamente enfocados en su inclusión laboral y alineados con sus necesidades.</p>
+              <a href="#" class="btn">Ver más</a>
+          </div>
+          <div class="card">
+              <h3>Interacción con empresas inclusivas</h3>
+              <p>Facilitamos el contacto con los departamentos de RRHH y responsabilidad social de empresas inclusivas, conectando a las personas con discapacidad con oportunidades laborales.</p>
+              <a href="#" class="btn">Ver más</a>
+          </div>
+          <div class="card">
+              <h3>Información y recursos clave</h3>
+              <p>Ponemos a disposición de los usuarios información sobre salud, educación, cultura, deporte, tecnología y más, todo enfocado en la accesibilidad y la integración de las personas con discapacidad.</p>
+              <a href="#" class="btn">Ver más</a>
+          </div>
+      </div>
+  </div> 
+
+  <div class="carrusel-container">
+    <div class="carrusel-colab">
+      <a href="https://fundades.org/"><img src="https://fundades.org/wp-content/uploads/2020/09/logo-Fundades-web-2020.png" alt="grupo_fundades"></a>
+      <a href=""><img src="assets/recursos/image-removebg-preview.png" alt="OMAPED"></a>
+    </div>
+    
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  
+    <div class="dots-container">
+      <span class="dot active" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+    </div>
+  </div>
+  
   </main>
   
+  <footer>
+    <div class="invt-f">    
+      <p class="txt-f">¡Te invitamos a registrarte y unirte a nuestra red! 🌐🤝 Colabora con nosotros para promover la inclusión laboral de las personas con discapacidad 💼♿️. Accede a capacitaciones 🎓, servicios 🛠️ y oportunidades 🚀. ¡Juntos podemos hacer de la inclusión una realidad para todos! 🙌</p>
+
+    <div class="btn-footer">
+      <button class="btn-f"><a href="#">Registrarme</a></button>
+      <button class="btn-f"><a href="#">¿Porque elegir INFODIS?</a></button>
+    </div>
+  </div>
+
+  </footer>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
