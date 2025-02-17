@@ -1,20 +1,48 @@
-let index = 0;
+let slideIndex = 0;
 
-function moveSlide(step) {
-  const slides = document.querySelector(".carrusel-colab");
-  const dots = document.querySelectorAll(".dot");
+function showSlide(index) {
+  let slides = document.querySelectorAll('.carousel-img');
+  let dots = document.querySelectorAll('.dot');
+  
+  if (index >= slides.length) {
+    slideIndex = 0;
+  } else if (index < 0) {
+    slideIndex = slides.length - 1;
+  }
 
-  index += step;
-  if (index > 1) index = 0;
-  if (index < 0) index = 1;
+  slides.forEach((slide, i) => {
+    slide.style.display = 'none';
+    dots[i].classList.remove('active');
+  });
 
-  slides.style.transform = `translateX(${-index * 100}%)`;
-
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[index].classList.add("active");
+  slides[slideIndex].style.display = 'block';
+  dots[slideIndex].classList.add('active');
 }
 
-function currentSlide(n) {
-  index = n;
-  moveSlide(0);
+function nextSlide() {
+  showSlide(slideIndex += 1);
 }
+
+function prevSlide() {
+  showSlide(slideIndex -= 1);
+}
+
+document.querySelector('.next-button').addEventListener('click', nextSlide);
+document.querySelector('.prev-button').addEventListener('click', prevSlide);
+
+showSlide(slideIndex);
+
+
+//shadow style//
+document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.querySelector("header.navegador");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+});
+

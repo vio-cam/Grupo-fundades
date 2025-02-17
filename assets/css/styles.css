@@ -7,11 +7,19 @@ body {
 
 /*navbar */
 header.navegador {
-  background-color: #04444c;
+  background-color: #e5f6f8;
   padding: 10px 0;
-  position: sticky;
+  position: fixed; /* Fijado en la parte superior */
   top: 0;
+  width: 100%;
   z-index: 100;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Sombra cuando el usuario baja */
+header.navegador.scrolled {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #d1eef2; /* Un poco más oscuro para dar efecto de profundidad */
 }
 
 .logo-infodis{
@@ -19,6 +27,7 @@ header.navegador {
   position: relative;
   height: 60px;
   width: auto;
+  margin-left: 30px;
 }
 
 .nav-bar nav ul {
@@ -33,17 +42,18 @@ header.navegador {
 .nav-bar nav ul li {
   position: relative;
   padding: 10px 20px;
-  color: #fff;
+  color: #000000;
 }
 
 .nav-bar nav ul li a {
-  color: #fff;
+  color: #0c0c0c;
   text-decoration: none;
   font-size: 16px;
 }
 
 .nav-bar nav ul li:hover {
-  background-color: #03656a;
+  background-color: #52878a6c;
+
 }
 
 .nav-bar nav ul li > a {
@@ -54,7 +64,7 @@ header.navegador {
 .nav-bar nav ul li ul {
   display: none;
   position: absolute;
-  background-color: #03656a;
+  background-color: #135f52;
   list-style-type: none;
   padding: 0;
   margin-top: 5px;
@@ -63,6 +73,7 @@ header.navegador {
 
 .nav-bar nav ul li:hover > ul {
   display: block;
+  border-radius: 10px;
 }
 
 .nav-bar nav ul li ul li {
@@ -70,11 +81,11 @@ header.navegador {
 }
 
 .nav-bar nav ul li ul li a {
-  color: #fff;
+  color: #000000;
 }
 
 .nav-bar nav ul li ul li a:hover {
-  background-color: #02504b;
+  background-color: #135f5265;
 }
 
 /* Estilos del contenedor */
@@ -88,268 +99,179 @@ nav ul {
   display: flex;
 }
 
-/*carrusel*/
-.carrusel {
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  background-color: #f0f0f0;
+/*contenido*/
+.text-container {
+  padding-top: 150px; /* Ajusta según sea necesario */
 }
 
-.slides {
-  display: flex;
-  animation: deslizar 60s infinite;
-}
-
-.slide {
-  min-width: 100%;
-  height: 500px; 
-  padding: 20px;
-  text-align: left; 
-  background-color: #04444c;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; 
-  background-size: cover; 
-  background-position: center; 
-  padding-left: 40px; 
-  padding-right: 40px; 
-}
-
-/* Títulos y párrafos */
-.slide h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.slide p {
-  font-size: 18px; 
-  line-height: 1.5;
-  max-width: 600px; 
-}
-
-.tittle-banner{
-  color: white;
-}
-/* Fondo para cada uno :carrusel */
-#inicio-infodis {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), 
-                    url(https://infodisperu.com/images/slider_1.jpg?a4c3a74c79c4ed5aa3593ad24aa70fb9);
-}
-
-#instituciones {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), 
-                    url(https://infodisperu.com/images/banner_1.jpg?8afd129437a5f4d5115a5b5d2777467b);
-}
-
-#servicios {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), 
-                    url(https://infodisperu.com/images/banner_3.jpg?f83cfa6bdb6ed37bec64e4f69f314165);
-}
-
-/* Animación*/
-@keyframes deslizar {
-  0% {
-      transform: translateX(0);
-  }
-  33.33% {
-      transform: translateX(-100%);
-  }
-  66.66% {
-      transform: translateX(-200%);
-  }
-  100% {
-      transform: translateX(0);
-  }
+.device-browser-img {
+  max-width: 90%; /* Ajusta según sea necesario */
+  margin: 0 100px; /* Centra la imagen */
+  width: 450px;
 }
 
 
-/*botones*/
-.btn-carrusel{
-  color: black;
-  background-color: #e1c75c;
-  border-color: #e1c75c;
-  border-radius: 10px;
-  padding: 5px 20px;
-  font-size: 20px;
-}
-
-/*bienvenida*/
-.logo-infodis-bvd{
-  margin-top: 150px;
-  margin-bottom: 50px;
-  margin-left: 39.5%;
-  height: 55px;
-}
-
-.tittle-bvd{
-  font-size: 36px;
-  margin: 15px 400px;
-  text-align: justify;
-  color: black;
-}
-.txt-bvd{
-  font-size: 20px;
-  margin: 15px 400px;
-  text-align: center;
-  text-align: justify;
-}
-
-/*objetivos*/
-.container-obj h2 {
-  color: #333;
-  font-size: 24px;
-}
-.container-obj {
-  max-width: 800px;
-  margin: auto;
-  margin-top: 100px;
-}
-.objective {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  position: relative;
-}
-.number {
-  font-size: 40px;
+/*escrito*/
+.typing {
+  font-size: 130px;
   font-weight: bold;
-  color: #03656a;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 2s steps(5, end) forwards, blink 0.8s infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 5ch; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/*imagen*/
+svg {
+  width: 100%;
+  height: 100%;
+}
+image {
+  width: 100%;
+  height: 100%;
+  preserveAspectRatio: xMidYMid slice;
+}
+
+/*cards*/
+.carousel-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Ajustamos el tamaño de las imágenes para que tengan el mismo tamaño */
+.carousel-img {
+  width: 450px; /* Haz que las imágenes llenen todo el ancho */
+  height: 150px; /* Ajusta la altura según lo necesites */
+  object-fit: cover; /* Mantiene la relación de aspecto sin distorsionar la imagen */
+  display: none; /* Ocultamos las imágenes inicialmente */
+}
+
+/* Movemos los puntos más abajo */
+.carousel-dots {
   position: absolute;
-  left: 0;
-}
-.text {
-  font-size: 18px;
-  color: #333;
-  margin-left: 60px;
-}
-.objective:nth-child(odd) {
-  margin-left: 20px;
-}
-.objective:nth-child(even) {
-  margin-left: 60px;
-}
-
-/*¿como lo haremos?*/
-h2 {
-  color: #f4b400;
-  font-size: 28px;
-  font-weight: bold;
-}
-.container-clh {
-  max-width: 1000px;
-  margin: auto;
-  margin-top: 100px;
-  text-align: center;
-}
-.grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-.card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 45%;
-  min-width: 300px;
-  text-align: center;
-}
-.card h3 {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-}
-.card p {
-  font-size: 16px;
-  color: #666;
-}
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/*colaboradores*/
-.carrusel-container {
-  position: relative;
-  width: 1000px;
-  height: 200px;
-  margin: auto;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 100px;
-}
-
-.carrusel-colab {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 200%;
-  padding: 10px;
-}
-
-.slide-colab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  bottom: 20px; /* Aumentamos la distancia desde el fondo */
   width: 100%;
-  flex: 0 0 100%;
+  text-align: center;
 }
 
-.carrusel-colab img {
-  width: 500px; 
-  height: auto;
-  padding: 80px 750px;
-  margin-top: 50px;
-}
 
-#btn-car {
+.carousel-buttons {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.prev-button, .next-button {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  cursor: pointer;
   padding: 15px;
-  font-size: 22px;
+  cursor: pointer;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev-button:hover, .next-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
-.dots-container {
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
   text-align: center;
-  margin-top: 15px;
 }
 
 .dot {
-  height: 14px;
-  width: 14px;
-  margin: 0 6px;
-  background-color: #bbb;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: gray;
   border-radius: 50%;
   display: inline-block;
-  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.dot.active {
+.active {
   background-color: #717171;
 }
+/* Estilo del contenedor del carrusel */
+.carousel-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px; /* Añadimos espacio arriba */
+}
 
+/* Contenedor de las imágenes del carrusel */
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px; /* Fijamos la altura para todas las imágenes */
+}
+
+/* Estilo para las imágenes del carrusel */
+.carousel-img {
+  width: 450px;  /* Fijamos un ancho consistente */
+  height: 100%;  /* La altura se ajusta al contenedor */
+  object-fit: contain; /* Asegura que la imagen se ajuste sin cortarse */
+  display: none; /* Ocultamos las imágenes inicialmente */
+}
+
+/* Estilo para los botones del carrusel */
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+/* Estilo de los puntos del carrusel */
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilo de cada punto */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: gray;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+/* Estilo cuando el punto está activo */
+.active {
+  background-color: #717171;
+}
 
 /*footer*/
 .invt-f {
