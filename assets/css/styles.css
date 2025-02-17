@@ -105,8 +105,8 @@ nav ul {
 }
 
 .device-browser-img {
-  max-width: 90%; /* Ajusta según sea necesario */
-  margin: 0 100px; /* Centra la imagen */
+  max-width: 90%;
+  margin: 0 100px;
   width: 450px;
 }
 
@@ -273,6 +273,11 @@ image {
 }
 
 /*footer*/
+footer{
+  padding-left: 50px;
+  background-color:#2e3037 ;
+}
+
 .invt-f {
   background-color: #2e3037;
   color: white;
@@ -280,6 +285,7 @@ image {
   font-size: 15px;
   text-align: left;
   margin-top: 80px;
+  margin-right: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -294,6 +300,7 @@ image {
   display: inline-block;
   gap: 10px;
   margin-top: auto;
+  margin-left: 65px;
 }
 
 .btn-footer button {

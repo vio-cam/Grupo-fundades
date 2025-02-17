@@ -1,100 +1,110 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
-  
-  /*navbar */
-  header.navegador {
-    background-color: #04444c;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .logo-infodis{
-    background-color: white;
-    position: relative;
-    height: 60px;
-    width: auto;
-  }
-  
-  .nav-bar nav ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-bar nav ul li {
-    position: relative;
-    padding: 10px 20px;
-    color: #fff;
-  }
-  
-  .nav-bar nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .nav-bar nav ul li:hover {
-    background-color: #03656a;
-  }
-  
-  .nav-bar nav ul li > a {
-    font-weight: bold;
-  }
-  
-  /* Submenú */
-  .nav-bar nav ul li ul {
-    display: none;
-    position: absolute;
-    background-color: #03656a;
-    list-style-type: none;
-    padding: 0;
-    margin-top: 5px;
-    min-width: 150px;
-  }
-  
-  .nav-bar nav ul li:hover > ul {
-    display: block;
-  }
-  
-  .nav-bar nav ul li ul li {
-    padding: 10px;
-  }
-  
-  .nav-bar nav ul li ul li a {
-    color: #fff;
-  }
-  
-  .nav-bar nav ul li ul li a:hover {
-    background-color: #02504b;
-  }
-  
-  /* Estilos del contenedor */
-  .nav-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  nav ul {
-    display: flex;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
 
-/*contenido*/
-.sign{
-  padding: 50px;
-} 
+/*navbar */
+header.navegador {
+  background-color: #e5f6f8;
+  padding: 10px 0;
+  position: fixed; /* Fijado en la parte superior */
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
 
+/* Sombra cuando el usuario baja */
+header.navegador.scrolled {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #d1eef2; /* Un poco más oscuro para dar efecto de profundidad */
+}
+
+.logo-infodis{
+  background-color: white;
+  position: relative;
+  height: 60px;
+  width: auto;
+  margin-left: 30px;
+}
+
+.nav-bar nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar nav ul li {
+  position: relative;
+  padding: 10px 20px;
+  color: #000000;
+}
+
+.nav-bar nav ul li a {
+  color: #0c0c0c;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-bar nav ul li:hover {
+  background-color: #52878a6c;
+
+}
+
+.nav-bar nav ul li > a {
+  font-weight: bold;
+}
+
+/* Submenú */
+.nav-bar nav ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #135f52;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 5px;
+  min-width: 150px;
+}
+
+.nav-bar nav ul li:hover > ul {
+  display: block;
+  border-radius: 10px;
+}
+
+.nav-bar nav ul li ul li {
+  padding: 10px;
+}
+
+.nav-bar nav ul li ul li a {
+  color: #000000;
+}
+
+.nav-bar nav ul li ul li a:hover {
+  background-color: #135f5265;
+}
+
+/* Estilos del contenedor */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+}
 
 /*footer*/
+footer{
+  padding-left: 50px;
+  background-color:#2e3037 ;
+}
+
 .invt-f {
   background-color: #2e3037;
   color: white;
@@ -102,6 +112,7 @@ body {
   font-size: 15px;
   text-align: left;
   margin-top: 80px;
+  margin-right: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -116,6 +127,7 @@ body {
   display: inline-block;
   gap: 10px;
   margin-top: auto;
+  margin-left: 65px;
 }
 
 .btn-footer button {
