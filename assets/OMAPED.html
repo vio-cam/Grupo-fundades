@@ -137,7 +137,87 @@
       </div>
     </section>
 
+    <!--omaped filtrado-->
+<body>
+  <h1>Redes de Lima</h1>
 
+  <div class="carousel">
+    <div class="slides" id="slides"></div>
+    <div class="carousel-controls">
+      <button class="control" onclick="moveSlide(-1)">‹</button>
+      <button class="control" onclick="moveSlide(1)">›</button>
+    </div>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script>
+    const redes = {
+      "RED NORTE": ["LOS OLIVOS", "INDEPENDENCIA", "COMAS", "SAN MARTIN DE PORRES", "PUENTE PIEDRA", "ANCON", "CARABAYLLO", "SANTA ROSA"],
+      "RED OESTE": ["SAN ISIDRO", "JESUS MARIA", "MAGDALENA DEL MAR", "SAN MIGUEL", "PUEBLO LIBRE", "SURQUILLO", "BARRANCO", "LINCE", "MIRAFLORES", "LA VICTORIA", "BREÑA", "RIMAC", "LIMA METROPOLITANA"],
+      "RED ESTE": ["SAN LUIS", "ATE", "EL AGUSTINO", "SANTA ANITA", "SAN JUAN DE LURIGANCHO", "LA MOLINA", "CIENEGUILLA", "SAN BORJA", "SANTIAGO DE SURCO", "LURIGANCHO", "CHOSICA", "CHACLACAYO"],
+      "RED SUR": ["VILLA EL SALVADOR", "PUCUSANA", "PUNTA HERMOSA", "PUNTA NEGRA", "SAN BARTOLO", "SANTA MARIA DEL MAR", "SAN JUAN DE MIRAFLORES", "LURIN", "VILLA MARIA DEL TRIUNFO", "PACHACAMAC", "CHORRILLOS"],
+      "RED CALLAO": ["BELLAVISTA", "CALLAO", "CARMEN DE LA LEGUA", "LA PERLA", "LA PUNTA", "VENTANILLA"],
+      "RED REGION NORTE DE LIMA": ["HUACHO", "PARAMONGA", "BARRANCA", "PATIVILCA", "HUAURA", "HUALMAY", "SAYAN", "SUPE", "SUPE PUERTO", "HUARAL", "CALETA DE CARQUIN", "SANTA MARIA", "VEGUETA", "CHANCAY", "AUCALLAMA"]
+    };
+
+    const slideBackgrounds = {
+      "RED NORTE": "https://www.somosperu.org.pe/wp-content/uploads/2017/08/Puerto-Maldonado-peru-turismo.jpg",
+      "RED OESTE": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/City_of_Lima%2C_Peru.jpg/640px-City_of_Lima%2C_Peru.jpg",
+      "RED ESTE": "https://elperuano.pe/fotografia/thumbnail/2018/10/07/000016969M.jpg",
+      "RED SUR": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhhTnSkqCd7pKvmk1cVD6Atnij20lr9v1QzA&s",
+      "RED CALLAO": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ3_kX2-jdWDuuaqgp0lBCkc_2JGtemdxqwA&s",
+      "RED REGION NORTE DE LIMA": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTroDyOyCr_E6dz2nRoiHXY0ImQwpNEE197ng&s"
+    };
+
+    const slidesContainer = document.getElementById("slides");
+    let currentIndex = 0;
+
+    function crearCard(distrito) {
+      const card = document.createElement("div");
+      card.className = "card hidden";
+      card.textContent = distrito;
+      card.style.backgroundImage = `url('https://via.placeholder.com/150x150?text=${encodeURIComponent(distrito)}')`;
+      return card;
+    }
+
+    function mostrarDistritos(red) {
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = "";
+      const distritos = redes[red] || [];
+
+      distritos.forEach((distrito, index) => {
+        const card = crearCard(distrito);
+        resultado.appendChild(card);
+        setTimeout(() => {
+          card.classList.add("visible");
+        }, index * 100);
+      });
+    }
+
+    function crearSlides() {
+      Object.keys(redes).forEach(red => {
+        const slide = document.createElement("div");
+        slide.className = "slide";
+        slide.style.backgroundImage = `url('${slideBackgrounds[red]}')`;
+        slide.innerHTML = `
+          <div>${red}</div>
+          <button onclick="mostrarDistritos('${red}')">Ver más</button>
+        `;
+        slidesContainer.appendChild(slide);
+      });
+    }
+
+    function moveSlide(direction) {
+      const totalSlides = Object.keys(redes).length;
+      currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+      slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      crearSlides();
+    });
+  </script>
   </main>
   
   <footer>
@@ -151,6 +231,6 @@
   </footer>
   <!--BOOTSTRAP-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="../assets/js/omaped.js"></script>
+  <script type="module"src="../assets/js/omaped.js"></script>
 </body>
 </html>
